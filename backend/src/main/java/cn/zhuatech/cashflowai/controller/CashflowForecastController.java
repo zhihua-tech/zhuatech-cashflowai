@@ -1,0 +1,4 @@
+/* Copyright 2026 上海如静知华信息科技有限公司 */
+package cn.zhuatech.cashflowai.controller;
+import cn.zhuatech.cashflowai.common.ApiResponse; import cn.zhuatech.cashflowai.service.CashflowForecastService; import jakarta.validation.Valid; import org.springframework.security.access.prepost.PreAuthorize; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/ai/cashflow") @PreAuthorize("hasAnyRole('DOMAIN_USER','DOMAIN_OPERATOR','ADMIN')") public class CashflowForecastController{private final CashflowForecastService service;public CashflowForecastController(CashflowForecastService service){this.service=service;}@PostMapping("/forecast") public ApiResponse<CashflowForecastService.Result> forecast(@Valid @RequestBody CashflowForecastService.Request request){return ApiResponse.ok("现金流预测完成",service.forecast(request));}}
