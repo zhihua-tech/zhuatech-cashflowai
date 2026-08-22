@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 export const domain={
  code:'CASHFLOWAI',systemName:'知华现金流预测 AI 平台',englishName:'CASH FLOW FORECAST AI',theme:{primary:'#315b7d',dark:'#243a51',accent:'#c99b4e'},
  workspace:'集团财资中心 / 现金流管理组',fieldWorkspace:'华东区域 / 财务共享中心',period:'2026-08-15 · 30 日滚动',liveText:'资金数据于 10:35 更新',fieldContextLabel:'预测周期',fieldContext:'未来 30 天',fieldUser:'陆清',fieldRole:'资金专员',adminUser:'唐越',adminRole:'集团资金负责人',
