@@ -5,8 +5,14 @@ import jakarta.validation.constraints.NotBlank;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class LiquidityStressGovernanceService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request request) {
         long stressedReceipts = request.expectedReceiptsCents() * (10_000L - request.receiptHaircutBps()) / 10_000L;
         long stressedClosing = request.openingCashCents() + stressedReceipts - request.committedPaymentsCents();
@@ -19,11 +25,17 @@ public class LiquidityStressGovernanceService {
         return new Result(request.scenarioId(), decision, stressedClosing,
                 stressedClosing - request.minimumLiquidityCents(), List.copyOf(actions), actions.isEmpty());
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String scenarioId, @Min(0) long openingCashCents,
                           @Min(0) long expectedReceiptsCents, @Min(0) long committedPaymentsCents,
                           @Min(0) long minimumLiquidityCents, @Min(0) int receiptHaircutBps,
                           @Min(0) int overdueReceivablesPercent, boolean covenantForecastComplete,
                           boolean forecastOwnerApproved) {
+        /**
+         * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+         */
         public Request {
             if (scenarioId == null || scenarioId.isBlank()) throw new IllegalArgumentException("scenarioId is required");
             if (openingCashCents < 0 || expectedReceiptsCents < 0 || committedPaymentsCents < 0 || minimumLiquidityCents < 0)
@@ -32,6 +44,9 @@ public class LiquidityStressGovernanceService {
                 throw new IllegalArgumentException("invalid percentage");
         }
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String scenarioId, String decision, long stressedClosingCashCents,
                          long liquidityHeadroomCents, List<String> requiredActions, boolean fundingPlanApproved) {}
 }
