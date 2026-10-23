@@ -1,5 +1,9 @@
 [简体中文](README.md) | **English**
 
+## Functional update: Daily cash movement ledger
+
+Aggregates same-currency receipts and payments into a continuous daily balance ledger and identifies liquidity-floor breaches. Signed-in users can edit inputs and export real computed results. See [API, examples and limitations](docs/AI_OPERATIONS_UPGRADE_20261023.md). No external model calls or automatic business changes; existing licensing and contacts remain unchanged.
+
 # ZhuaTech Cashflowai
 
 > A source-available enterprise project by [ZhuaTech](https://www.zhuatech.cn/) for enterprise finance, planning, settlement, and risk control.
