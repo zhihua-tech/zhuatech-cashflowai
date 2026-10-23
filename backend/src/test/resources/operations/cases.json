@@ -1,0 +1,66 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "HOLD",
+      "availableCash": "#20000",
+      "cashGap": "#10000"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "recoveryPct": "62.5"
+    },
+    "expected": {
+      "decision": "PASS",
+      "cashGap": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "recoveryPct": "0"
+    },
+    "expected": {
+      "availableCash": "#-20000",
+      "cashGap": "#50000"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "outflows": "0"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "minimumAvailable": "20000"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "recoveryPct": "101"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "restrictedCash": "0"
+    },
+    "expected": {
+      "availableCash": "#30000",
+      "decision": "PASS"
+    },
+    "error": false
+  }
+]
